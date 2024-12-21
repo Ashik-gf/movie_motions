@@ -7,15 +7,17 @@ import { useEffect, useState } from "react";
 const CompaireDetailsCard = ({ movie }) => {
     const [movieData, setMovieData] = useState({});
     const id = movie.id;
-    if (id) {
-        useEffect(() => {
+
+    useEffect(() => {
+        if (id) {
             const fetchDetails = async (id) => {
                 const data = await getAllmovies(id);
                 setMovieData(data)
             }
-            fetchDetails(id)
-        }, [id])
-    }
+        }
+        fetchDetails(id)
+    }, [id])
+
     return (
         <div className="grid gap-6">
             <div className="bg-zinc-900 rounded-lg p-4 flex flex-col">

@@ -6,14 +6,14 @@ const SearchResults = ({ searchResults }) => {
         <main className="container mx-auto px-4 pt-24 pb-8">
             {/* <!-- Search Stats --> */}
             <div className="mb-6">
-                <h1 className="text-2xl font-bold">Search Results for "Avatar"</h1>
+                <h1 className="text-2xl font-bold">Search Results for </h1>
                 <p className="text-gray-400">Found <span>{searchResults.length}</span> results</p>
             </div>
             {/* <!-- Filters and Sort Section --> */}
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                 {/* <!-- Movie Card 1 --> */}
                 {
-                    searchResults.map((movie) => <Link
+                    searchResults.map((movie) => <Link key={movie.id}
                         href={`/movie/${movie.id}`}
                         className="bg-zinc-900 text-white rounded-lg overflow-hidden hover:scale-105 transition-transform">
                         <Image
