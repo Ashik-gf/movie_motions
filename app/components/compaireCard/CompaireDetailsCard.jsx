@@ -14,8 +14,9 @@ const CompaireDetailsCard = ({ movie }) => {
                 const data = await getAllmovies(id);
                 setMovieData(data)
             }
+            fetchDetails(id)
         }
-        fetchDetails(id)
+
     }, [id])
 
     return (

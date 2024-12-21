@@ -14,7 +14,9 @@ export async function generateMetadata({ params: { id } }) {
 }
 const MoveDetailsPage = async ({ params: { id } }) => {
     return (
-        <DetailsPage id={id} />
+        <div>
+            <DetailsPage id={id} />
+        </div>
     )
 }
 
