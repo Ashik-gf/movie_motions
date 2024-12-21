@@ -48,14 +48,6 @@ export const getUser = async () => {
         console.error(error.message);
     }
 }
-// getOne User
-// async function findUserByCredentials(credential) {
-//     const users = await getUser();
-//     const user = users.find((user) => user.email === credential.email && user.password === credential.password);
-//     if (user) {
-//         return replaceMongoIdInObject(user);
-//     }
-// }
 export async function performLogin(formData) {
     try {
         const credential = {};
@@ -68,8 +60,6 @@ export async function performLogin(formData) {
             email: user.email,
             password: user.password
         }
-        // const found = await findUserByCredentials(credential);
-        // console.log(found);
         return found;
     } catch (error) {
         throw error;
