@@ -14,7 +14,6 @@ const Login = () => {
         try {
             const formData = new FormData(event.currentTarget);
             const found = await performLogin(formData);
-            console.log(login);
             if (found) {
                 login(found);
                 router.push('/');
