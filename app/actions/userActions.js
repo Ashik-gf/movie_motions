@@ -49,22 +49,27 @@ export const getUser = async () => {
     }
 }
 // getOne User
-async function findUserByCredentials(credential) {
-    const users = await getUser();
-    const user = users.find((user) => user.email === credential.email && user.password === credential.password);
-    // if (user) {
-    //     return replaceMongoIdInObject(user);
-    // }
-    // return null;
-
-    return user;
-}
+// async function findUserByCredentials(credential) {
+//     const users = await getUser();
+//     const user = users.find((user) => user.email === credential.email && user.password === credential.password);
+//     if (user) {
+//         return replaceMongoIdInObject(user);
+//     }
+// }
 export async function performLogin(formData) {
     try {
         const credential = {};
         credential.email = formData.get("email");
         credential.password = formData.get("password");
-        const found = await findUserByCredentials(credential);
+        const users = await getUser();
+        const user = users.find((user) => user.email === credential.email && user.password === credential.password);
+        console.log(user);
+        const found = {
+            email: user.email,
+            password: user.password
+        }
+        // const found = await findUserByCredentials(credential);
+        // console.log(found);
         return found;
     } catch (error) {
         throw error;

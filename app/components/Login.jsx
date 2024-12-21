@@ -15,6 +15,7 @@ const Login = () => {
         try {
             const formData = new FormData(event.currentTarget);
             const found = await performLogin(formData);
+            console.log(found);
             if (found) {
                 login(found);
                 router.push('/');
@@ -65,7 +66,7 @@ const Login = () => {
 
                     <div className="mt-6 text-moviedb-gray">
                         New to moviedb?
-                        <Link href="#" className="text-white hover:underline">Sign up now</Link>
+                        <Link href={'/auth/user'} className="text-white hover:underline">Sign up now</Link>
                     </div>
                 </div>
                 <p className=" text-center text-red-500">{error}</p>
