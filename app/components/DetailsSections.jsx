@@ -2,14 +2,9 @@ import Button from "@/utils/Button";
 import Image from "next/image";
 import { getAllmovies } from "../api/route";
 import AuthContextProvider from "../providers/AuthContextProvider";
-
-
-
-
-
 const DetailsSections = async ({ id }) => {
     const data = await getAllmovies(id);
-
+    console.log(data);
     return (
         <div id="movieDetails" className="min-h-screen mb-8">
             <div className="relative h-screen">
