@@ -16,7 +16,6 @@ const DetailsPage = ({ id }) => {
             <div className="my-24">
                 <SimilarMovies id={id} />
             </div>
-
         </div>
     )
 }
